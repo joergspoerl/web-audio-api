@@ -5,13 +5,32 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+
+  <h2>Web Audio Api Equalizer</h2>
+  <div class="eq">
+    <div class="controls">
+      <label>Low Gain</label>
+      <input #lowGain type="range" value="100" step="1" min="0" max="100" (change)="changeGain(lowGain.value, 'lowGain');">
+    </div>
+    <div class="controls">
+      <label>Mid Gain</label>
+      <input #midGain type="range" value="100" step="1" min="0" max="100" (change)="changeGain(midGain.value, 'midGain');">
+    </div>
+    <div class="controls">
+      <label>High Gain</label>
+      <input #highGain type="range" value="100" step="1" min="0" max="100" (change)="changeGain(highGain.value, 'highGain');">
+    </div>
+  </div>
+  <!-- <h3 id="test">André Michelle
+    <a href="www.audiotool.com/track/volution/">Volution</a>
+  </h3> -->
+  <!-- <audio #myplayer1 controls crossorigin>
+    <source src="http://api.audiotool.com/track/volution/play.mp3" type="audio/mpeg">
+    <source src="http://api.audiotool.com/track/volution/play.ogg" type="audio/ogg"> Your browser does not support the audio tag.
+  </audio> -->
+
+
+  <button (click)="start()"> start </button>
+  <button (click)="stop()"> stop </button>
+
 </ion-content>
